@@ -17,6 +17,9 @@ import Card from './UI/Card';
 
 function ExpenseItem(props) {
 
+    const clickHandler = () => {
+        console.log('Clicked!!!!!');
+    };
     return (
         <Card className='expense-item'>
             <ExpenseDate date={props.date} />
@@ -24,8 +27,15 @@ function ExpenseItem(props) {
                 <h2>{props.title}</h2>
             </div>
             <div className='expense-item__price'>${props.amount}</div>
+            <button onClick={clickHandler}>Change Title</button>
+            <button onClick={() => { console.log('Hi this is inLine function ') }}>Change Title</button>
+
         </Card>
     );
+    // we have to avoid using Arrow function in onClick, like in above 31st line
+    //we not call the funciton in onClik in button like clickHandler() 
+    // we have to just point the function like clickHandler
+    //if we declare the function for onClik or any event the use "Hankler" in the function name
 }
 
 
