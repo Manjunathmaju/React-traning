@@ -22,9 +22,18 @@ const ExpenseForm = () => {
 
     const amountChangeHandler = (event) => {
         // setEnteredAmount(event.target.value)
-        setUserInput({
-            ...userInput,
-            enteredAmount: event.target, value,
+
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmount: event.target, value,
+        // });
+        //Defference b/w above & below 
+        // in above the react scludeler will be confused and getting missed data or worng data
+        // in below the react scludeler wili not confused and always gives a latest value and update the latest value
+
+        // you should use this arrow function syntax when state update dependes previous state
+        setUserInput((prevState) => {
+            return { ...prevState, enteredtitle: event.target.value };
         });
     };
 
