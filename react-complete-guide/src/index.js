@@ -1,3 +1,4 @@
+//This is our MAIN component file which executed first 
 import ReactDOM from 'react-dom/client';
 
 import './index.css';
