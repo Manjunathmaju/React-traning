@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ExpenseForm.css'
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
@@ -51,7 +51,9 @@ const ExpenseForm = () => {
             amount: enteredAmount,
             date: new Date(enteredDate)
         };
-        console.log(expenseData)
+        props.onSaveExpenseData(expenseData);//this function is declerad in NewExpense Component and we are calling here
+        //this is how communicate one component to another like, parent to child
+        //this is a super imponent concept
         setEnteredAmount('');
         setEnteredTitle('');
         setEnteredDate('');
