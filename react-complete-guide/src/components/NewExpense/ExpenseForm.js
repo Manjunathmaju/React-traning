@@ -3,12 +3,12 @@ import './ExpenseForm.css'
 
 const ExpenseForm = () => {
 
-    const [enteredtitle, setEnteredTitle] = useState('');
+    const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
     // Instud of writing 3 lind write in one line link below;
     // const [userInput, setUserInput] = useState({
-    // enteredtitle: '',
+    // enteredTitle: '',
     // enteredAmount: '',
     // enteredDate: ''
     // })
@@ -16,7 +16,7 @@ const ExpenseForm = () => {
         setEnteredTitle(event.target.value);
         // setUserInput({
         //     ...userInput,
-        //     enteredtitle: event.target, value,
+        //     enteredTitle: event.target, value,
         // });
     };
 
@@ -33,7 +33,7 @@ const ExpenseForm = () => {
 
         // you should use this arrow function syntax when state update dependes previous state
         // setUserInput((prevState) => {
-        //     return { ...prevState, enteredtitle: event.target.value };
+        //     return { ...prevState, enteredTitle: event.target.value };
         // });
     };
 
@@ -47,11 +47,14 @@ const ExpenseForm = () => {
     const submitHandler = (event) => {
         event.preventDefault();//if we not writen this preventDefault then, the page will relode when ever i clicked on the button
         const expenseData = {
-            title: enteredtitle,
+            title: enteredTitle,
             amount: enteredAmount,
             date: new Date(enteredDate)
         };
         console.log(expenseData)
+        setEnteredAmount('');
+        setEnteredTitle('');
+        setEnteredDate('');
     };
     //when the Add Expense button is clicked the form will execute and call te submitHanbler
     return (
@@ -59,15 +62,15 @@ const ExpenseForm = () => {
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label>Title</label>
-                    <input type='text' onChange={titleChangeHandler}></input>
+                    <input type='text' value={enteredTitle} onChange={titleChangeHandler}></input>
                 </div>
                 <div className='new-expense__control'>
                     <label>Amount</label>
-                    <input type='number' min='0.01' step='0.01' onChange={amountChangeHandler}></input>
+                    <input type='number' value={enteredAmount} min='0.01' step='0.01' onChange={amountChangeHandler}></input>
                 </div>
                 <div className='new-expense__control'>
                     <label>Date</label>
-                    <input type='date' min='2019-01-20' max='2022-12-31' onChange={dateChangeHandler}></input>
+                    <input type='date' value={enteredDate} min='2019-01-20' max='2022-12-31' onChange={dateChangeHandler}></input>
                 </div>
             </div>
             <div className='new-expense__actions'>
