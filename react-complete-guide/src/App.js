@@ -1,3 +1,4 @@
+import React from "react";
 import Expenses from "./components/Expenses";
 
 //lower html elements are default html element 
@@ -32,7 +33,15 @@ function App() {
     },
   ];
 
-  return (
+  // return React.createElement(//this also JSX code 
+  // //for this type JSX we have to (import React for 'react') in all Components (files) and this type is old React
+  //   'div',
+  //   {},
+  //   React.createElement('h2',{},"let's get started!"),
+  //   React.createElement(Expenses,{items:expenses})
+  // );
+
+  return (//this is the JSX code and this is Modern React 
     <div>
       <h2>Let's get started!</h2>
       <Expenses items={expenses} />
