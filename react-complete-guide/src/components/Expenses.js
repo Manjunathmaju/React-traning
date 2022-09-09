@@ -1,6 +1,11 @@
 import ExpenseItem from "./ExpenseItem";
 import './Expenses.css';
 
+
+// const Expenses(props)=> {
+// works same as below function, if we put the code here.
+// }
+
 function Expenses(props) {
     return (
         <div className="expenses">

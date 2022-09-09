@@ -9,7 +9,12 @@
 <div>{props.date.toISOString()}</div> */
 import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate';
-import Card from './Card/Card';
+import Card from './UI/Card';
+
+// const ExpenseItem(props)=> {
+// works same as below function, if we put the code here.
+// }
+
 function ExpenseItem(props) {
 
     return (

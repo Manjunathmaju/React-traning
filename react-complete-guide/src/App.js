@@ -10,6 +10,9 @@ import Expenses from "./components/Expenses";
 //so, for that
 //we can make out components reuseable by using concepts called as " props " in react
 
+// const App=()=>{
+// we can put the code of below "function App(){}" and it works same
+// }  
 function App() {
   const expenses = [
     {

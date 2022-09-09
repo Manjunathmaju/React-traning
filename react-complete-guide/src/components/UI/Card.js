@@ -1,5 +1,8 @@
 import './Card.css';
 
+// const Card=(prop){
+//works same as below function, if we put the code here.
+// }
 function Card(props) {
     const classes = 'card ' + props.className;
 
