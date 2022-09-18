@@ -1,0 +1,14 @@
+.singleTodo {
+    background-color: yellow;
+    padding-left: 15px;
+    border-radius: 10px;
+    width: 75%;
+}
+
+.delBtn {
+    background-color: red;
+    color: azure;
+    border-radius: 7px;
+    border: none;
+    padding: 5px;
+}
